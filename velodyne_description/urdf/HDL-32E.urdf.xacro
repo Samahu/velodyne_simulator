@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="HDL-32E">
-  <xacro:property name="M_PI" value="3.1415926535897931" />
-  <xacro:macro name="HDL-32E" params="*origin parent:=base_link name:=velodyne topic:=/velodyne_points hz:=10 lasers:=32 samples:=2187 collision_range:=0.3 min_range:=0.9 max_range:=130.0 noise:=0.008 min_angle:=-${M_PI} max_angle:=${M_PI} gpu:=false">
+  <xacro:macro name="HDL-32E" params="*origin parent:=base_link name:=velodyne topic:=/velodyne_points hz:=10 lasers:=32 samples:=2187 collision_range:=0.3 min_range:=0.9 max_range:=130.0 noise:=0.008 min_angle:=-${pi} max_angle:=${pi} gpu:=false">
 
     <joint name="${name}_base_mount_joint" type="fixed">
       <xacro:insert_block name="origin" />
@@ -68,8 +67,8 @@
               <vertical>
                 <samples>${lasers}</samples>
                 <resolution>1</resolution>
-                <min_angle>-${30.67*M_PI/180.0}</min_angle>
-                <max_angle> ${10.67*M_PI/180.0}</max_angle>
+                <min_angle>-${30.67*pi/180.0}</min_angle>
+                <max_angle> ${10.67*pi/180.0}</max_angle>
               </vertical>
             </scan>
             <range>
@@ -108,8 +107,8 @@
               <vertical>
                 <samples>${lasers}</samples>
                 <resolution>1</resolution>
-                <min_angle>-${30.67*M_PI/180.0}</min_angle>
-                <max_angle> ${10.67*M_PI/180.0}</max_angle>
+                <min_angle>-${30.67*pi/180.0}</min_angle>
+                <max_angle> ${10.67*pi/180.0}</max_angle>
               </vertical>
             </scan>
             <range>
